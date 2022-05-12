@@ -5,13 +5,15 @@ import matplotlib.pyplot as plt
 
 plt.style.use('seaborn-whitegrid')   # try another styles: 'classic'
 
-x = np.linspace(0, 10, 200)
+NDOTS = 100
+
+lat = [1, 2, 3, 3.2, 3.4]
+long = [1, 2, 3, 5, 4.5]
+param = [2, 3, 2, 1, 3]
 
 fig = plt.figure()
-plt.plot(x, np.sin(x), '-', label='sin')
-plt.plot(x, np.cos(x), '--', label='cos')
-plt.legend()
-
+plt.scatter(lat, long, c=param, s=100, marker='s')
+plt.colorbar()
 
 fig.show()
 fig.savefig('/home/pi/pic.png')
